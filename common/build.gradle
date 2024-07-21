@@ -1,0 +1,46 @@
+plugins {
+    id("org.spongepowered.gradle.vanilla")
+    id "com.github.johnrengelman.shadow" version "8.1.0"
+}
+base {
+    archivesName = "${mod_name}-${minecraft_version}-common"
+}
+configurations {
+    implementation.extendsFrom shadow
+}
+
+repositories {
+    maven {
+        name = "Fuzs Mod Resources"
+        url = "https://raw.githubusercontent.com/Fuzss/modresources/main/maven/"
+    }
+}
+
+minecraft {
+    version(minecraft_version)
+
+    if (file("src/main/resources/${mod_id}.accesswidener").exists()){
+        accessWideners(file("src/main/resources/${mod_id}.accesswidener"))
+    }
+}
+
+dependencies {
+    // Base
+    compileOnly group:'org.spongepowered', name:'mixin', version:'0.8.5'
+    implementation "mysticdrew:common-networking-common:${common_networking_version}"
+    shadow(annotationProcessor("io.github.llamalad7:mixinextras-common:0.3.6"))
+    implementation "fuzs.forgeconfigapiport:forgeconfigapiport-common:${forge_config_api_version}"
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifactId = base.archivesName.get()
+            version = mod_version
+
+            artifact jar
+            artifact sourcesJar
+            artifact javadocJar
+        }
+    }
+}
