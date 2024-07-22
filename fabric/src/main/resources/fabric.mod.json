@@ -1,6 +1,6 @@
 {
     "schemaVersion": 1,
-    "id": "infamous_example",
+  "id": "enchantwithmob",
     "version": "${mod_version}",
     "name": "${mod_name}",
     "description": "${mod_description}",
@@ -41,9 +41,8 @@
     "custom": {
         "modmenu": {
             "links": {
-                "infamous_example.discord": "https://discord.gg/Dy4JAHZDZK"
+              "enchantwithmob.discord": "https://discord.gg/Dy4JAHZDZK"
             },
-            "badges": [ "library" ],
             "update_checker": true
         }
     }

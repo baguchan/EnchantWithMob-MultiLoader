@@ -115,9 +115,9 @@ publishMods {
 
     curseforge {
         projectId = ""
-        projectSlug = "infamous_example"
+        projectSlug = "enchantwithmob"
         accessToken = providers.environmentVariable("CURSEFORGE_API_KEY")
-        announcementTitle = "New Infamous Example CurseForge Release"
+        announcementTitle = "New EnchantWithMob CurseForge Release"
 
         getMinecraftVersions().add(minecraft_version)
     }
@@ -125,7 +125,7 @@ publishMods {
     modrinth {
         projectId = ""
         accessToken = providers.environmentVariable("MODRINTH_API_KEY")
-        announcementTitle = "New Infamous Example Modrinth Release"
+        announcementTitle = "New EnchantWithMob Modrinth Release"
 
         getMinecraftVersions().add(minecraft_version)
     }
